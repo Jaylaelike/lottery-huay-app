@@ -5,7 +5,8 @@
 .lottery-number {
   font-size: 10rem;
   padding: 2rem;
-  border: 1px solid #eee;
+  background-color: #f8d53a;
+  border: 1px solid #000000;
   border-radius: 0.5rem;
 }
 
