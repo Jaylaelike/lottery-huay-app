@@ -13,9 +13,15 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
 
+import audio from '../sound/sound_buddha.mp3';
+
 function randomNumber() {
   return Math.ceil(Math.random() * 9);
 }
+
+function playSound() {
+  new Audio(audio).play()
+} 
 
 function LotteryRandomMachine({ title, size }) {
   const intialCounter = Array(size).fill(0); // [0,0,0]
@@ -25,7 +31,8 @@ function LotteryRandomMachine({ title, size }) {
 
   const random = () => {
     // setCounter([randomNumber(), randomNumber(), randomNumber()])
-    setCounter(result);
+    setCounter(result)
+    playSound();
   };
 
   return (
@@ -33,7 +40,7 @@ function LotteryRandomMachine({ title, size }) {
       <h1 className="lottery-tiltle">{title}</h1>
       <div className="lottery-container">
         {counter.map((item) => (
-          <CountUp className="lottery-number" end={item}></CountUp>
+          <CountUp className="lottery-number" duration={10} end={item}></CountUp>
         ))}
       </div>
       <div>
